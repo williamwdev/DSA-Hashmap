@@ -36,3 +36,23 @@ function main() {
 }
 
 main();
+
+// Find the output of the following code without running it first
+const WhatDoesThisDo = function () {
+  let str1 = 'Hello World.';
+  let str2 = 'Hello World.';
+  let map1 = new HashMap();
+  map1.set(str1, 10); // { 'Hello World' : 10 }
+  map1.set(str2, 20); // { 'Hello World' : 20 } 
+  let map2 = new HashMap();
+  let str3 = str1; 
+  let str4 = str2;
+  map2.set(str3, 20); // { 'Hello World' : 20 }
+  map2.set(str4, 10); // { 'Hello World' : 10 }
+
+  console.log(map1.get(str1)); // should return 20
+  console.log(map2.get(str3)); // should return 10
+  // This function creates collisions so duplicate keys will overwrite previous data values
+};
+
+WhatDoesThisDo();
