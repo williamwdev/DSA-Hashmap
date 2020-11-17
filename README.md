@@ -24,3 +24,11 @@
 - Open addressing = when you have a collision, you hash the key to the empty slot nearest to where it should live.
 - Seperate chaining = use linked lists to hash the keys that run into collision. The first slot contains the pointer to the head of the list. When a key collides with another, we use the next pointers to put the keys in a linked list.
 
+> What is the difference between ArrayList and HashMap?
+- ArrayList are re-sizable array implementation of the List interface. It maintains the insertion order and can have duplicate values as well.
+- HashMap are hash table based implementation of the Map interface. It stores the data in form of key-value pair where keys must be unique. No order of data is maintained. It provides CONSTANT TIME performance for the basic operations
+
+> When should you use HashMap over ArrayList?
+- Use HashMap when you can identify your data with some unique key (data that can be processed in key value pair).
+- When no index based operations is required, instead key based operations are preferred.
+- Use HashMap when their major requirements are only retrieving or modifying data's based on Key. (In Web apps username are stored as a key and user data is stored as a value in a HashMap, for faster retrieval of user data corresponding to a username)

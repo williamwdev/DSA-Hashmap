@@ -89,3 +89,7 @@ class HashMap {
     return hash >>> 0;
   }
 }
+
+module.exports = {
+  HashMap,
+};
