@@ -59,7 +59,7 @@ WhatDoesThisDo();
 
 // Create function to delete all duplicated characters in a string and keep only the first occurence of each character
 function removeDuplicatedCharacters(string) {
-  const map = new Map();
+  const map = new Map(); //
   let newStr = '';
   string.split('').forEach((letter) => {
     if (!map.has(letter)) {
@@ -71,3 +71,26 @@ function removeDuplicatedCharacters(string) {
 }
 
 console.log(removeDuplicatedCharacters('google')); // gole
+console.log(
+  removeDuplicatedCharacters('google all that you think can think of')
+); // gole athyuinkcf -- spaces are counted as a value key and the duplicates are removed --
+
+// Write an algorithm to check whether any anagram of some string is a palindrome.
+function palindrome(string) {
+  const result = new Map();
+  for (let i = 0; i < string.length; i++) {
+    if (!result.delete(string[i])) {
+      result.set(string[i], 1);
+    }
+  }
+  console.log('result', result);
+
+  if (result.size <= 1) {
+    return true; // if result has 0 or 1 item then it meets specification of an anagram
+  } else {
+    return false;
+  }
+}
+
+console.log(palindrome('acecarr')); // true
+console.log(palindrome('north')); // false
