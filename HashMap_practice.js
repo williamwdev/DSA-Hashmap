@@ -43,9 +43,9 @@ const WhatDoesThisDo = function () {
   let str2 = 'Hello World.';
   let map1 = new HashMap();
   map1.set(str1, 10); // { 'Hello World' : 10 }
-  map1.set(str2, 20); // { 'Hello World' : 20 } 
+  map1.set(str2, 20); // { 'Hello World' : 20 }
   let map2 = new HashMap();
-  let str3 = str1; 
+  let str3 = str1;
   let str4 = str2;
   map2.set(str3, 20); // { 'Hello World' : 20 }
   map2.set(str4, 10); // { 'Hello World' : 10 }
@@ -56,3 +56,18 @@ const WhatDoesThisDo = function () {
 };
 
 WhatDoesThisDo();
+
+// Create function to delete all duplicated characters in a string and keep only the first occurence of each character
+function removeDuplicatedCharacters(string) {
+  const map = new Map();
+  let newStr = '';
+  string.split('').forEach((letter) => {
+    if (!map.has(letter)) {
+      map.set(letter, '');
+      newStr += letter;
+    }
+  });
+  return newStr;
+}
+
+console.log(removeDuplicatedCharacters('google')); // gole
